@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6403ECC21C0E36CD009FE35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECC11C0E36CD009FE35D /* AppDelegate.swift */; };
-		6403ECC41C0E36CD009FE35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECC31C0E36CD009FE35D /* ViewController.swift */; };
+		6403ECC41C0E36CD009FE35D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECC31C0E36CD009FE35D /* MapViewController.swift */; };
 		6403ECC71C0E36CD009FE35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECC51C0E36CD009FE35D /* Main.storyboard */; };
 		6403ECC91C0E36CD009FE35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECC81C0E36CD009FE35D /* Assets.xcassets */; };
 		6403ECCC1C0E36CD009FE35D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECCA1C0E36CD009FE35D /* LaunchScreen.storyboard */; };
 		6403ECD71C0E36CD009FE35D /* Cash_InTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECD61C0E36CD009FE35D /* Cash_InTests.swift */; };
 		6403ECE21C0E36CD009FE35D /* Cash_InUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECE11C0E36CD009FE35D /* Cash_InUITests.swift */; };
+		6403ECF21C0E42CC009FE35D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403ECF11C0E42CC009FE35D /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		6403ECBE1C0E36CD009FE35D /* Cash In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6403ECC11C0E36CD009FE35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6403ECC31C0E36CD009FE35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6403ECC31C0E36CD009FE35D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6403ECC61C0E36CD009FE35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6403ECC81C0E36CD009FE35D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6403ECCB1C0E36CD009FE35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		6403ECDD1C0E36CD009FE35D /* Cash InUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cash InUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6403ECE11C0E36CD009FE35D /* Cash_InUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_InUITests.swift; sourceTree = "<group>"; };
 		6403ECE31C0E36CD009FE35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6403ECF11C0E42CC009FE35D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6403ECF21C0E42CC009FE35D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		6403ECB51C0E36CD009FE35D = {
 			isa = PBXGroup;
 			children = (
+				6403ECF11C0E42CC009FE35D /* MapKit.framework */,
 				6403ECC01C0E36CD009FE35D /* Cash In */,
 				6403ECD51C0E36CD009FE35D /* Cash InTests */,
 				6403ECE01C0E36CD009FE35D /* Cash InUITests */,
@@ -98,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6403ECC11C0E36CD009FE35D /* AppDelegate.swift */,
-				6403ECC31C0E36CD009FE35D /* ViewController.swift */,
+				6403ECC31C0E36CD009FE35D /* MapViewController.swift */,
 				6403ECC51C0E36CD009FE35D /* Main.storyboard */,
 				6403ECC81C0E36CD009FE35D /* Assets.xcassets */,
 				6403ECCA1C0E36CD009FE35D /* LaunchScreen.storyboard */,
@@ -193,6 +197,11 @@
 				TargetAttributes = {
 					6403ECBD1C0E36CD009FE35D = {
 						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6403ECD11C0E36CD009FE35D = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -256,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6403ECC41C0E36CD009FE35D /* ViewController.swift in Sources */,
+				6403ECC41C0E36CD009FE35D /* MapViewController.swift in Sources */,
 				6403ECC21C0E36CD009FE35D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Turner Thornberry (32J5KWUKYN)";
 				INFOPLIST_FILE = "Cash In/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MCHackathon.Cash-In";
@@ -408,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Turner Thornberry (32J5KWUKYN)";
 				INFOPLIST_FILE = "Cash In/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MCHackathon.Cash-In";
@@ -482,6 +493,7 @@
 				6403ECE81C0E36CD009FE35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6403ECE91C0E36CD009FE35D /* Build configuration list for PBXNativeTarget "Cash InTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +502,7 @@
 				6403ECEB1C0E36CD009FE35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6403ECEC1C0E36CD009FE35D /* Build configuration list for PBXNativeTarget "Cash InUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +511,7 @@
 				6403ECEE1C0E36CD009FE35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
