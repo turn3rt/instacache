@@ -14,6 +14,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var resetMapButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var customerView: UIView!
+    @IBOutlet weak var customerName: UILabel!
+    @IBOutlet weak var customerImage: UIImageView!
+    @IBOutlet weak var customerNumber: UILabel!
+    
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -68,6 +73,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.resetMapButton.layer.shadowOffset = CGSizeMake(2,2)
         self.resetMapButton.layer.shadowOpacity = 0.5
         self.resetMapButton.layer.shadowRadius = 2
+        
+        self.customerView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.customerView.layer.shadowOffset = CGSizeMake(2,2)
+        self.customerView.layer.shadowOpacity = 0.5
+        self.customerView.layer.shadowRadius = 2
+        
+        self.customerImage.layer.cornerRadius = 65/2
+        self.customerImage.clipsToBounds = true
+        
+        customerName.text = "bernie sanders loljaljasdf;jklsd"
+        customerNumber.text = "ljadflk;jsdf"
+        
         
         
 //        //if not online, show profile page

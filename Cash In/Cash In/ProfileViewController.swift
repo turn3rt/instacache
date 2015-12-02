@@ -16,6 +16,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var vendorName: UILabel!
     @IBOutlet weak var vendorBalance: UILabel!
     
+    @IBOutlet weak var balanceView: UIView!
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var deliverButton: UIButton!
+    
+    
     var vendor = Vendor()
     
     override func viewDidLoad() {
@@ -23,6 +28,22 @@ class ProfileViewController: UIViewController {
         //shit happens
         //start polling vendor data
         //maybe do something similar to the twitter auth auto-jump to login page if you arent authed
+        
+        
+        self.balanceView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.balanceView.layer.shadowOffset = CGSizeMake(2,2)
+        self.balanceView.layer.shadowOpacity = 0.5
+        self.balanceView.layer.shadowRadius = 2
+        
+        self.profileView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.profileView.layer.shadowOffset = CGSizeMake(2,2)
+        self.profileView.layer.shadowOpacity = 0.5
+        self.profileView.layer.shadowRadius = 2
+        
+        self.deliverButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.deliverButton.layer.shadowOffset = CGSizeMake(2,2)
+        self.deliverButton.layer.shadowOpacity = 0.5
+        self.deliverButton.layer.shadowRadius = 2
         
         print(vendor.vendorObject)
         

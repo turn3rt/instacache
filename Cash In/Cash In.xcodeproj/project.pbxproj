@@ -19,6 +19,7 @@
 		6403ECF81C0E9739009FE35D /* VendorPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECF71C0E9738009FE35D /* VendorPin.swift */; };
 		6403ED021C0F0FA4009FE35D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ED011C0F0FA4009FE35D /* Helper.swift */; };
 		6403ED041C0F0FBD009FE35D /* Money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6403ED031C0F0FBD009FE35D /* Money@2x.png */; };
+		646D30151C0F391300FF8993 /* Juicy-M.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646D30141C0F391300FF8993 /* Juicy-M.jpg */; };
 		9FBD39501C0ED03B00854B15 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD394F1C0ED03B00854B15 /* ProfileViewController.swift */; };
 		9FF5D4D51C0E8F6F0034D0AB /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5D4D41C0E8F6F0034D0AB /* Vendor.swift */; };
 		EBED542D2DDDB50D629A7C72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 448C492B5095C6097B799E39 /* libPods.a */; };
@@ -61,6 +62,7 @@
 		6403ECF71C0E9738009FE35D /* VendorPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPin.swift; sourceTree = "<group>"; };
 		6403ED011C0F0FA4009FE35D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		6403ED031C0F0FBD009FE35D /* Money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money@2x.png"; sourceTree = "<group>"; };
+		646D30141C0F391300FF8993 /* Juicy-M.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Juicy-M.jpg"; sourceTree = "<group>"; };
 		80410F34E90B0501F8EC170B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F25E8781C0E8A46003BB231 /* Cash In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cash In-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FBD394F1C0ED03B00854B15 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				6403ECC81C0E36CD009FE35D /* Assets.xcassets */,
 				6403ECF31C0E5B13009FE35D /* Location.png */,
 				6403ED031C0F0FBD009FE35D /* Money@2x.png */,
+				646D30141C0F391300FF8993 /* Juicy-M.jpg */,
 				6403ECCA1C0E36CD009FE35D /* LaunchScreen.storyboard */,
 				6403ECCD1C0E36CD009FE35D /* Info.plist */,
 				9F25E8781C0E8A46003BB231 /* Cash In-Bridging-Header.h */,
@@ -290,6 +293,7 @@
 				6403ED041C0F0FBD009FE35D /* Money@2x.png in Resources */,
 				6403ECCC1C0E36CD009FE35D /* LaunchScreen.storyboard in Resources */,
 				6403ECC91C0E36CD009FE35D /* Assets.xcassets in Resources */,
+				646D30151C0F391300FF8993 /* Juicy-M.jpg in Resources */,
 				6403ECC71C0E36CD009FE35D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
