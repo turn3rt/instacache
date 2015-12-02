@@ -36,11 +36,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
-        self.getCashButton.layer.cornerRadius = 25
-        self.getCashButton.layer.shadowColor = UIColor.blackColor().CGColor
-        self.getCashButton.layer.shadowOffset = CGSizeMake(2,2)
-        self.getCashButton.layer.shadowOpacity = 0.8
-        self.getCashButton.layer.shadowRadius = 2
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.7127, longitude: -74.0059), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667), addressDictionary: nil))
+        request.requestsAlternateRoutes = true
+        request.transportType = .Automobile
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            
+            for route in unwrappedResponse.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
         
 
         vendor = Vendor()
@@ -63,29 +74,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     //have no idea why this function isn't running or working
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        //print("WORK")
-        
-
-        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
-            return nil
-        }
-        print("WORK")
-        
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
-            annotationView!.canShowCallout = true
-        }
-        else {
-            annotationView!.annotation = annotation
-        }
-        
-        //TODO: resize this image
-        annotationView!.image = UIImage(named: "money.png")
-        return annotationView
-        
-    }
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        
+//
+//        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
+//            return nil
+//        }
+//        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
+//        if annotationView == nil {
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
+//            annotationView!.canShowCallout = true
+//        }
+//        else {
+//            annotationView!.annotation = annotation
+//        }
+//        
+//        //TODO: resize this image
+//        annotationView!.image = UIImage(named: "money.png")
+//        return annotationView
+//        
+//    }
     
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
