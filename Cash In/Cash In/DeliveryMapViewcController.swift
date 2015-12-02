@@ -30,16 +30,18 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
     var currentRegion = MKCoordinateRegion()
     var currentCenter = CLLocationCoordinate2D()
     
-    var vendor: Vendor?
+    var customer: Customer
     
     //TODO: Put live data
-    let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
-    let testLocation = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
+    var vendorLocation: CLLocationCoordinate2D
+    var vendor: Vendor
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        customer = Customer()
+        vendorLocation = CLLocationCoordinate2D(latitude: customer.customer_latitude!, longitude: customer.customer_longitude!)
         self.mapView.delegate = self
         
         self.locationManager.delegate = self
@@ -51,7 +53,7 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         //request map directions from current loc
         let request = MKDirectionsRequest()
-        let finalDestination = MKMapItem(placemark: MKPlacemark(coordinate: testLocation, addressDictionary: nil))
+        let finalDestination = MKMapItem(placemark: MKPlacemark(coordinate: vendorLocation, addressDictionary: nil))
         request.source = MKMapItem.mapItemForCurrentLocation() //for demo need to swap this val to be the vendor location
         request.destination = finalDestination
         request.requestsAlternateRoutes = false
@@ -70,7 +72,7 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         
         vendor = Vendor()
-        vendor!.checkAFNetworking()
+        vendor.checkAFNetworking()
         
         self.resetMapButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.resetMapButton.layer.shadowOffset = CGSizeMake(2,2)
@@ -95,8 +97,8 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.customerImage.layer.cornerRadius = 65/2
         self.customerImage.clipsToBounds = true
         
-        customerName.text = "bernie sanders loljaljasdf;jklsd"
-        customerNumber.text = "ljadflk;jsdf"
+        customerName.text = customer.customer_fullname
+        customerNumber.text = customer.customer_cell
         
         
         
