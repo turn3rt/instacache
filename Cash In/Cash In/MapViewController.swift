@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var currentRegion = MKCoordinateRegion()
     var currentCenter = CLLocationCoordinate2D()
 
-    var vendor: Vendor?
+    var localAPI = LocalAPI()
     
     //TODO: Put live data
     let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
@@ -60,9 +60,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         
-
-        vendor = Vendor()
-        vendor!.checkAFNetworking()
+        localAPI.checkAFNetworking()
 
         self.resetMapButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.resetMapButton.layer.shadowOffset = CGSizeMake(2,2)

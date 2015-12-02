@@ -5,7 +5,7 @@
 //  Created by David Fontenot on 12/2/15.
 //  Copyright © 2015 MChackathon. All rights reserved.
 //
-
+//Users/hellyeah/Dropbox/Projects/instacache/Cash In/Cash In/ProfileViewController.swift
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var vendorName: UILabel!
     @IBOutlet weak var vendorBalance: UILabel!
     
-    var vendor = Vendor()
+    var localAPI = LocalAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         //start polling vendor data
         //maybe do something similar to the twitter auth auto-jump to login page if you arent authed
         
-        print(vendor.vendorObject)
+        print(localAPI.vendorObject)
         
         
         profileImage.setImageWithURL(NSURL(string: "http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-2.jpg")!)
