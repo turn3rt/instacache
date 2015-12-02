@@ -19,15 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
-                                <rect key="frame" x="-6" y="0.0" width="611" height="600"/>
+                                <rect key="frame" x="-3" y="0.0" width="605" height="600"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F9-MG-n4z">
-                                <rect key="frame" x="5" y="495" width="590" height="100"/>
+                                <rect key="frame" x="8" y="495" width="584" height="97"/>
                                 <color key="backgroundColor" red="0.70196078431372544" green="0.76078431372549016" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                 <state key="normal" title="Get Cash">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showCashSelectSheet:" destination="BYZ-38-t0r" eventType="touchDown" id="gwq-Sv-mH5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-nD-GbN">
                                 <rect key="frame" x="530" y="442" width="50" height="45"/>
@@ -44,21 +47,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5Y1-6k-hkl"/>
-                            <constraint firstAttribute="trailing" secondItem="5F9-MG-n4z" secondAttribute="trailing" constant="5" id="AwD-BC-XXk"/>
+                            <constraint firstAttribute="trailing" secondItem="5F9-MG-n4z" secondAttribute="trailing" constant="8" id="AwD-BC-XXk"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="top" secondItem="FTf-oK-orq" secondAttribute="bottom" constant="-105" id="CZT-lP-mQF"/>
                             <constraint firstItem="mPt-nD-GbN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jgg-gW-yf6"/>
                             <constraint firstItem="mPt-nD-GbN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="378" id="LYi-WN-Elt"/>
-                            <constraint firstItem="5F9-MG-n4z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="V4L-3h-Q1Z"/>
+                            <constraint firstItem="5F9-MG-n4z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="V4L-3h-Q1Z"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="top" secondItem="mPt-nD-GbN" secondAttribute="bottom" constant="8" symbolic="YES" id="lDj-Wv-rhb"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="leading" secondItem="FTf-oK-orq" secondAttribute="leading" constant="11" id="p3e-Sn-GU4"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="trailing" secondItem="FTf-oK-orq" secondAttribute="trailing" constant="-10" id="vXw-Ja-GmW"/>
-                            <constraint firstItem="5F9-MG-n4z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-5" id="wUh-ss-QIP"/>
+                            <constraint firstItem="5F9-MG-n4z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-8" id="wUh-ss-QIP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cash Out" id="fyO-fl-X6r"/>
                     <connections>
                         <outlet property="getCashButton" destination="5F9-MG-n4z" id="eV3-ZB-w0U"/>
                         <outlet property="mapView" destination="FTf-oK-orq" id="GzL-Nc-pWQ"/>
+                        <outlet property="resetMapButton" destination="mPt-nD-GbN" id="29x-tk-fnv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
