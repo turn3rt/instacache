@@ -10,8 +10,9 @@ import Foundation
 
 
 class Vendor {
-    let params = ["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
-    let resourceUrl = "http://api.nytimes.com/svc/topstories/v1/home.json"
+    let params = []
+    //["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
+    let resourceUrl = "http://intense-lake-3556.herokuapp.com/api/vendor"
     
     func checkAFNetworking() {
         let manager = AFHTTPRequestOperationManager()
