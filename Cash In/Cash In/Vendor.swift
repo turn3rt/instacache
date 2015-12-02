@@ -13,10 +13,12 @@ class Vendor {
     let params = []
     //["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
     let resourceUrl = "http://intense-lake-3556.herokuapp.com/api/vendor"
+    var vendorObject: AnyObject?
     
     func checkAFNetworking() {
         let manager = AFHTTPRequestOperationManager()
         manager.GET(resourceUrl, parameters: params, success: { (operation, responseObject) -> Void in
+            self.vendorObject = responseObject
             print(responseObject)}, failure: nil)
         
         

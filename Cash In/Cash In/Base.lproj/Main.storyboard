@@ -227,6 +227,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="7Ld-U2-zpr"/>
+                    <connections>
+                        <outlet property="profileImage" destination="keE-ZY-baH" id="gvT-xf-gUG"/>
+                        <outlet property="vendorBalance" destination="xMq-Jt-JB2" id="4jV-BS-8ua"/>
+                        <outlet property="vendorName" destination="mIv-oF-0nW" id="sk3-sz-yRV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bty-d8-K5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
