@@ -97,6 +97,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showCashSelectSheet:" destination="BYZ-38-t0r" eventType="touchDown" id="tDa-Du-ruy"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="jbn-lY-rnP"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Zzh-18-86j" userLabel="TopView">
