@@ -55,10 +55,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     //have no idea why this function isn't running or working
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        //print("WORK")
         
-        if !(annotation is MKPointAnnotation) {
+
+        if !(annotation is MKPointAnnotation || annotation is VendorPin || annotation is CustomPointAnnotation) {
             return nil
         }
+        print("WORK")
         
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
         if annotationView == nil {
@@ -69,8 +72,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView!.annotation = annotation
         }
         
+        //TODO: resize this image
         annotationView!.image = UIImage(named: "money.png")
-        print("ass")
         return annotationView
         
     }
