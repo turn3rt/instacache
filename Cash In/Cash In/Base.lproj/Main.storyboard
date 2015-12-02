@@ -8,7 +8,7 @@
         <!--Cash Out-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Cash_In" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="Cash_In" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
                                 <rect key="frame" x="-3" y="0.0" width="605" height="600"/>
                                 <animations/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F9-MG-n4z">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F9-MG-n4z">
                                 <rect key="frame" x="8" y="495" width="584" height="97"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.70196078431372544" green="0.76078431372549016" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,7 +33,7 @@
                                     <action selector="showCashSelectSheet:" destination="BYZ-38-t0r" eventType="touchDown" id="gwq-Sv-mH5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-nD-GbN">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-nD-GbN">
                                 <rect key="frame" x="530" y="442" width="50" height="45"/>
                                 <animations/>
                                 <constraints>
@@ -70,7 +70,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="334"/>
+            <point key="canvasLocation" x="2577" y="334"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="pJY-Qn-Ad3">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="7cN-I0-JH4" customClass="ProfileViewController" customModule="Cash_In" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mp8-RW-7gD"/>
+                        <viewControllerLayoutGuide type="bottom" id="M0A-Yf-FHw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ydl-pB-WHo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Ld-U2-zpr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bty-d8-K5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869" y="334"/>
         </scene>
         <!--Item-->
         <scene sceneID="ft5-Kx-RC7">
@@ -89,7 +109,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KXL-lp-a7H"/>
+                        <segue destination="7cN-I0-JH4" kind="relationship" relationship="rootViewController" id="AkA-Pg-vzN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJK-NQ-e9o" userLabel="First Responder" sceneMemberID="firstResponder"/>

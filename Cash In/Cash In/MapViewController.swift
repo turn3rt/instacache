@@ -16,6 +16,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var resetMapButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
 
     let locationManager = CLLocationManager()
     var currentRegion = MKCoordinateRegion()
@@ -48,6 +50,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.resetMapButton.layer.shadowOffset = CGSizeMake(2,2)
         self.resetMapButton.layer.shadowOpacity = 0.5
         self.resetMapButton.layer.shadowRadius = 2
+        
+        
+//        //if not online, show profile page
+//        if (true) {
+//            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+//            self.showViewController(vc, sender: self)
+//        }
 
 
     }
