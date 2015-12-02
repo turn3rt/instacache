@@ -8,12 +8,6 @@
 
 import Foundation
 
-
-let params = []
-//["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
-let resourceUrl = "http://intense-lake-3556.herokuapp.com/api/"
-let manager = AFHTTPRequestOperationManager()
-
 class LocalAPI {
     let params = []
     //["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
@@ -79,14 +73,3 @@ class LocalAPI {
     }
 }
 
-class Customer {
-    
-}
-
-class Transaction {
-    
-}
-
-class Preset {
-    
-}
