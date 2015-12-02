@@ -24,6 +24,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.mapView.delegate = self
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -44,19 +46,52 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     }
     
+    
+    //have no idea why this function isn't running or working
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        annotationView!.image = UIImage(named: "money.png")
+        print("ass")
+        return annotationView
+        
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //current users location:
         let location = locations.last
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         currentRegion = region
         self.mapView.setRegion(region, animated: true)
+        
+        //static vendor location
+        let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
+        let vendorPin = VendorPin(coordinate: vendorLocation, title: "Cash is here", subtitle: "It's on the way!")
+        mapView.addAnnotation(vendorPin)
+        
+        
+        
         self.locationManager.stopUpdatingLocation()
     }
     
     @IBAction func showCashSelectSheet(sender: UIButton) {
         let cashMenu = UIAlertController(title: nil, message: "Select The Desired Cash Amount", preferredStyle: .ActionSheet)
-        let alertPopUp = UIAlertController(title: "Something Happened", message: "Nafis Sux Penis", preferredStyle: .Alert)
-        let action = UIAlertAction(title: "Yes I do", style: .Default, handler: nil)
+        let alertPopUp = UIAlertController(title: "Something Happened", message: "Click Below", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Yes", style: .Default, handler: nil)
         
         
         let twentyDollars = UIAlertAction(title: "$20", style: .Default, handler: {
@@ -66,18 +101,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
         let fourtyDollars = UIAlertAction(title: "$40", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
+            self.presentViewController(alertPopUp, animated: true, completion: nil)
             print("40 Selected")
         })
         let sixtyDollars = UIAlertAction(title: "$60", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
+            self.presentViewController(alertPopUp, animated: true, completion: nil)
             print("60 Selected")
         })
         let eightyDollars = UIAlertAction(title: "$80", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
+            self.presentViewController(alertPopUp, animated: true, completion: nil)
             print("80 Selected")
         })
         let lotsOfDollars = UIAlertAction(title: "$100", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
+            self.presentViewController(alertPopUp, animated: true, completion: nil)
             print("100 Selected")
         })
         
