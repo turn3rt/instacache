@@ -58,7 +58,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //print("WORK")
         
 
-        if !(annotation is MKPointAnnotation || annotation is VendorPin || annotation is CustomPointAnnotation) {
+        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
             return nil
         }
         print("WORK")

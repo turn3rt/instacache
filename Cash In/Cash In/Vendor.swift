@@ -17,7 +17,7 @@ class Vendor {
     func checkAFNetworking() {
         let manager = AFHTTPRequestOperationManager()
         manager.GET(resourceUrl, parameters: params, success: { (operation, responseObject) -> Void in
-            print(responseObject["results"])}, failure: nil)
+            print(responseObject)}, failure: nil)
         
         
         //        manager.GET(resourceUrl, parameters: params, success: { (operation, responseObject) -> Void in
