@@ -30,11 +30,11 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
     var currentRegion = MKCoordinateRegion()
     var currentCenter = CLLocationCoordinate2D()
     
-    var customer: Customer
+    var customer: Customer!
     
     //TODO: Put live data
-    var vendorLocation: CLLocationCoordinate2D
-    var vendor: Vendor
+    var vendorLocation: CLLocationCoordinate2D!
+    var vendor: Vendor!
     
     
     override func viewDidLoad() {
