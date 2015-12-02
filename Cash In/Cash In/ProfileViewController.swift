@@ -16,7 +16,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var vendorName: UILabel!
     @IBOutlet weak var vendorBalance: UILabel!
     
+
     var localAPI = LocalAPI()
+
+    @IBOutlet weak var balanceView: UIView!
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var deliverButton: UIButton!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +32,25 @@ class ProfileViewController: UIViewController {
         //start polling vendor data
         //maybe do something similar to the twitter auth auto-jump to login page if you arent authed
         
+
         print(localAPI.vendorObject)
+
         
+        self.balanceView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.balanceView.layer.shadowOffset = CGSizeMake(2,2)
+        self.balanceView.layer.shadowOpacity = 0.5
+        self.balanceView.layer.shadowRadius = 2
+        
+        self.profileView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.profileView.layer.shadowOffset = CGSizeMake(2,2)
+        self.profileView.layer.shadowOpacity = 0.5
+        self.profileView.layer.shadowRadius = 2
+        
+        self.deliverButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.deliverButton.layer.shadowOffset = CGSizeMake(2,2)
+        self.deliverButton.layer.shadowOpacity = 0.5
+        self.deliverButton.layer.shadowRadius = 2
+                
         
         profileImage.setImageWithURL(NSURL(string: "http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-2.jpg")!)
     }
