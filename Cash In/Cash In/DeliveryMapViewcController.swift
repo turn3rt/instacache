@@ -18,6 +18,7 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var customerImage: UIImageView!
     @IBOutlet weak var customerNumber: UILabel!
+    @IBOutlet weak var cashReceivedButton: UIButton!
     
     @IBOutlet weak var ETA: UILabel!
     @IBOutlet weak var ETAContainer: UIView!
@@ -85,6 +86,11 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.ETAContainer.layer.shadowOffset = CGSizeMake(2,2)
         self.ETAContainer.layer.shadowOpacity = 0.5
         self.ETAContainer.layer.shadowRadius = 2
+        
+        self.cashReceivedButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.cashReceivedButton.layer.shadowOffset = CGSizeMake(2,2)
+        self.cashReceivedButton.layer.shadowOpacity = 0.5
+        self.cashReceivedButton.layer.shadowRadius = 2
         
         self.customerImage.layer.cornerRadius = 65/2
         self.customerImage.clipsToBounds = true

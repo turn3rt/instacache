@@ -56,29 +56,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
-    //have no idea why this function isn't running or working
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        //print("WORK")
-        
-
-        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
-            return nil
-        }
-        
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
-            annotationView!.canShowCallout = true
-        }
-        else {
-            annotationView!.annotation = annotation
-        }
-        
-        //TODO: resize this image
-        annotationView!.image = Helper.ResizeImage(UIImage(named: "Money@2x.png")!, targetSize: CGSizeMake(25, 25))
-        return annotationView
-    }
-    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //current users location:
@@ -87,13 +64,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         currentRegion = region
         self.mapView.setRegion(region, animated: true)
-        
-        //static vendor location
-        let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
-        let vendorPin = VendorPin(coordinate: vendorLocation, title: "[Runner's Name]", subtitle: "I'm on the way!")
-        mapView.addAnnotation(vendorPin)
-        
-        
         
         self.locationManager.stopUpdatingLocation()
     }
