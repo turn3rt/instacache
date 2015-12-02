@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
                                 <rect key="frame" x="-3" y="0.0" width="605" height="600"/>
                                 <animations/>
                             </mapView>
@@ -38,9 +38,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5Y1-6k-hkl"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="5dd-CF-hnk"/>
                             <constraint firstItem="mPt-nD-GbN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jgg-gW-yf6"/>
                             <constraint firstItem="mPt-nD-GbN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="471" id="LYi-WN-Elt"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TkN-dq-phl"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X56-p0-1Vg"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-23" id="ZU6-vL-rmU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cash Out" id="fyO-fl-X6r"/>

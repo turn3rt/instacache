@@ -21,8 +21,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     let locationManager = CLLocationManager()
     var currentRegion = MKCoordinateRegion()
+    var currentCenter = CLLocationCoordinate2D()
 
     var vendor: Vendor?
+    
+    //TODO: Put live data
+    let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
+
     
     
     override func viewDidLoad() {
@@ -36,10 +41,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
+        
+        //request map directions from current loc
         let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.7127, longitude: -74.0059), addressDictionary: nil))
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667), addressDictionary: nil))
-        request.requestsAlternateRoutes = true
+        let finalDestination = MKMapItem(placemark: MKPlacemark(coordinate: vendorLocation, addressDictionary: nil))
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        request.destination = finalDestination
+        request.requestsAlternateRoutes = false
         request.transportType = .Automobile
         
         let directions = MKDirections(request: request)
@@ -73,27 +81,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
-    //have no idea why this function isn't running or working
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-//        
-//
-//        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
-//            return nil
-//        }
-//        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
-//            annotationView!.canShowCallout = true
-//        }
-//        else {
-//            annotationView!.annotation = annotation
-//        }
-//        
-//        //TODO: resize this image
-//        annotationView!.image = UIImage(named: "money.png")
-//        return annotationView
-//        
-//    }
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor.blueColor()
+        return renderer
+    }
+    
+    
+   // have no idea why this function isn't running or working
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+
+        if !(annotation is MKPointAnnotation || annotation is VendorPin) {
+            return nil
+        }
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
+            annotationView!.canShowCallout = true
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        //TODO: resize this image
+        annotationView!.image = Helper.ResizeImage(UIImage(named: "Money@2x.png")!, targetSize: CGSizeMake(25, 25))
+        return annotationView
+        
+    }
     
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -102,10 +117,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         currentRegion = region
+        currentCenter = center
         self.mapView.setRegion(region, animated: true)
         
         //static vendor location
-        let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
         let vendorPin = VendorPin(coordinate: vendorLocation, title: "Cash is here", subtitle: "It's on the way!")
         mapView.addAnnotation(vendorPin)
         
