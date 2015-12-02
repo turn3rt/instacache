@@ -8,6 +8,31 @@
 
 import Foundation
 
+class Customer {
+    var customer_firstname: String?
+    var customer_lastname: String?
+    var customer_fullname: String?
+    var customer_cell: String?
+    var customer_latitude: Double?
+    var customer_longitude: Double?
+    
+    var ETA: Double?
+    
+    init() {
+        customer_firstname = "David"
+        customer_lastname = "Fontenot"
+        customer_fullname = "\(customer_firstname) \(customer_lastname)"
+        customer_cell = "9542604240"
+        customer_latitude = Double(25.807505)
+        customer_longitude = Double(-80.143874)
+        ETA = Double(1)
+    }
+    
+    func updateCustomer(customerObject: AnyObject){
+        
+    }
+}
+
 class LocalAPI {
     let params = []
     //["api-key": "53eb9541b4374660d6f3c0001d6249ca:19:70900879"]
@@ -30,7 +55,9 @@ class LocalAPI {
         let fullUrl = resourceUrl + "customer"
         manager.GET(fullUrl, parameters: params, success: { (operation, responseObject) -> Void in
             self.customerObject = responseObject
-            print(responseObject)}, failure: nil)
+            print(responseObject)
+            //print(responseObject[0])
+            }, failure: nil)
     }
     
     func updateVendor() {
