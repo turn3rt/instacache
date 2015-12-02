@@ -109,8 +109,106 @@
             </objects>
             <point key="canvasLocation" x="1117" y="334"/>
         </scene>
+        <!--Cash Out-->
+        <scene sceneID="aYc-v7-MSL">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="cys-2F-AZq" customClass="DeliveryMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sfS-j4-d4V"/>
+                        <viewControllerLayoutGuide type="bottom" id="egi-Ff-LVy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9UK-X2-IcK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tup-Ll-f9H">
+                                <rect key="frame" x="-3" y="0.0" width="606" height="600"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMH-1e-iGh">
+                                <rect key="frame" x="530" y="433" width="50" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="NIb-lC-4lb"/>
+                                    <constraint firstAttribute="height" constant="45" id="PUq-8v-Jxg"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Location.png"/>
+                                <connections>
+                                    <action selector="resetLocation:didUpdateLocations:" destination="cys-2F-AZq" eventType="touchDown" id="4ki-p1-Y7b"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Bl-XdF">
+                                <rect key="frame" x="20" y="515" width="560" height="75"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Juicy-M.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-ra-emW">
+                                        <rect key="frame" x="8" y="5" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="2Jj-ST-krV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliver To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-4G-u9S">
+                                        <rect key="frame" x="86" y="8" width="58" height="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-cw-YQl">
+                                        <rect key="frame" x="86" y="24" width="65" height="28"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[number]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHk-CS-JJV">
+                                        <rect key="frame" x="86" y="50" width="48" height="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="sHk-CS-JJV" firstAttribute="leading" secondItem="SSQ-cw-YQl" secondAttribute="leading" id="7QB-Rh-9ar"/>
+                                    <constraint firstItem="sVG-4G-u9S" firstAttribute="leading" secondItem="ksn-ra-emW" secondAttribute="trailing" constant="13" id="NNT-Gz-07U"/>
+                                    <constraint firstAttribute="height" constant="75" id="PTx-gc-NuX"/>
+                                    <constraint firstItem="sVG-4G-u9S" firstAttribute="top" secondItem="JIC-Bl-XdF" secondAttribute="topMargin" id="SCP-4z-Ahq"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SSQ-cw-YQl" secondAttribute="trailing" constant="8" id="fSx-70-ogA"/>
+                                    <constraint firstItem="ksn-ra-emW" firstAttribute="top" secondItem="JIC-Bl-XdF" secondAttribute="top" constant="5" id="iZa-Zg-C3m"/>
+                                    <constraint firstItem="sVG-4G-u9S" firstAttribute="leading" secondItem="SSQ-cw-YQl" secondAttribute="leading" id="m2m-A2-i2M"/>
+                                    <constraint firstItem="ksn-ra-emW" firstAttribute="centerY" secondItem="JIC-Bl-XdF" secondAttribute="centerY" id="sZa-dO-brV"/>
+                                    <constraint firstItem="ksn-ra-emW" firstAttribute="leading" secondItem="JIC-Bl-XdF" secondAttribute="leadingMargin" id="tvg-DJ-EBY"/>
+                                    <constraint firstItem="sHk-CS-JJV" firstAttribute="bottom" secondItem="JIC-Bl-XdF" secondAttribute="bottomMargin" id="uDf-iZ-mVS"/>
+                                    <constraint firstItem="SSQ-cw-YQl" firstAttribute="top" secondItem="sVG-4G-u9S" secondAttribute="bottom" constant="-1" id="wy1-em-JdO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XMH-1e-iGh" firstAttribute="trailing" secondItem="9UK-X2-IcK" secondAttribute="trailingMargin" id="1iQ-0b-WGZ"/>
+                            <constraint firstItem="XMH-1e-iGh" firstAttribute="top" secondItem="sfS-j4-d4V" secondAttribute="bottom" constant="369" id="6zO-nr-1RJ"/>
+                            <constraint firstItem="tup-Ll-f9H" firstAttribute="bottom" secondItem="egi-Ff-LVy" secondAttribute="top" id="74n-Cq-tjh"/>
+                            <constraint firstItem="egi-Ff-LVy" firstAttribute="top" secondItem="JIC-Bl-XdF" secondAttribute="bottom" constant="10" id="LfR-QL-nxq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JIC-Bl-XdF" secondAttribute="trailing" id="f3h-GP-jAL"/>
+                            <constraint firstItem="tup-Ll-f9H" firstAttribute="leading" secondItem="9UK-X2-IcK" secondAttribute="leadingMargin" constant="-23" id="flR-K1-sfu"/>
+                            <constraint firstItem="JIC-Bl-XdF" firstAttribute="leading" secondItem="9UK-X2-IcK" secondAttribute="leadingMargin" id="kjn-0e-2Zv"/>
+                            <constraint firstItem="tup-Ll-f9H" firstAttribute="top" secondItem="9UK-X2-IcK" secondAttribute="top" id="r17-jh-NJI"/>
+                            <constraint firstItem="tup-Ll-f9H" firstAttribute="centerX" secondItem="9UK-X2-IcK" secondAttribute="centerX" id="tqJ-B5-dHQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cash Out" id="crb-xH-aSa"/>
+                    <connections>
+                        <outlet property="customerImage" destination="ksn-ra-emW" id="WdU-5r-JU8"/>
+                        <outlet property="customerName" destination="SSQ-cw-YQl" id="3Xt-DC-m8y"/>
+                        <outlet property="customerNumber" destination="sHk-CS-JJV" id="DD2-Gn-oCb"/>
+                        <outlet property="customerView" destination="JIC-Bl-XdF" id="cn1-Uq-lqg"/>
+                        <outlet property="mapView" destination="tup-Ll-f9H" id="56g-Ze-vEU"/>
+                        <outlet property="resetMapButton" destination="XMH-1e-iGh" id="Wy0-Ly-6SE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLY-E4-qMo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="334"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Juicy-M.jpg" width="512" height="512"/>
         <image name="Location.png" width="512" height="512"/>
     </resources>
 </document>
