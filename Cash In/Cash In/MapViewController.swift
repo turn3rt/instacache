@@ -16,6 +16,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var resetMapButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
     let locationManager = CLLocationManager()
     let helper = Helper()
@@ -99,34 +100,59 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBAction func showCashSelectSheet(sender: UIButton) {
         let cashMenu = UIAlertController(title: nil, message: "Select The Desired Cash Amount", preferredStyle: .ActionSheet)
-        let alertPopUp = UIAlertController(title: "Something Happened", message: "Click Below", preferredStyle: .Alert)
-        let action = UIAlertAction(title: "Yes", style: .Default, handler: nil)
+        let DeliveryAlertPopUp = UIAlertController(title: "Please Wait", message: "A Cash Out deliverer will be with you shortly", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
         
         
         let twentyDollars = UIAlertAction(title: "$20", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("20 Selected")
+            let vc = self.mainStoryboard.instantiateViewControllerWithIdentifier("DeliveryMapViewController")
+            self.presentViewController(DeliveryAlertPopUp, animated: true, completion: {() -> Void in
+                sleep(2)
+                self.dismissViewControllerAnimated(true, completion: {() -> Void in
+                    self.showViewController(vc, sender: self)})
+                print("20 Selected")
+            })
         })
         let fourtyDollars = UIAlertAction(title: "$40", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("40 Selected")
+            let vc = self.mainStoryboard.instantiateViewControllerWithIdentifier("DeliveryMapViewController")
+            self.presentViewController(DeliveryAlertPopUp, animated: true, completion: {() -> Void in
+                sleep(2)
+                self.dismissViewControllerAnimated(true, completion: {() -> Void in
+                    self.showViewController(vc, sender: self)})
+                print("40 Selected")
+            })
         })
         let sixtyDollars = UIAlertAction(title: "$60", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("60 Selected")
+            let vc = self.mainStoryboard.instantiateViewControllerWithIdentifier("DeliveryMapViewController")
+            self.presentViewController(DeliveryAlertPopUp, animated: true, completion: {() -> Void in
+                sleep(2)
+                self.dismissViewControllerAnimated(true, completion: {() -> Void in
+                    self.showViewController(vc, sender: self)})
+                print("60 Selected")
+            })
         })
         let eightyDollars = UIAlertAction(title: "$80", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("80 Selected")
+            let vc = self.mainStoryboard.instantiateViewControllerWithIdentifier("DeliveryMapViewController")
+            self.presentViewController(DeliveryAlertPopUp, animated: true, completion: {() -> Void in
+                sleep(2)
+                self.dismissViewControllerAnimated(true, completion: {() -> Void in
+                    self.showViewController(vc, sender: self)})
+                print("80 Selected")
+            })
         })
         let lotsOfDollars = UIAlertAction(title: "$100", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("100 Selected")
+            let vc = self.mainStoryboard.instantiateViewControllerWithIdentifier("DeliveryMapViewController")
+            self.presentViewController(DeliveryAlertPopUp, animated: true, completion: {() -> Void in
+                sleep(2)
+                self.dismissViewControllerAnimated(true, completion: {() -> Void in
+                    self.showViewController(vc, sender: self)})
+                print("100 Selected")
+            })
         })
         
         let cancel = UIAlertAction(title: "Cancel", style: .Destructive, handler: {
@@ -141,7 +167,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         cashMenu.addAction(lotsOfDollars)
         cashMenu.addAction(cancel)
         
-        alertPopUp.addAction(action)
+        DeliveryAlertPopUp.addAction(action)
         
         
         self.presentViewController(cashMenu, animated: true, completion: nil)

@@ -79,11 +79,12 @@
                         <outlet property="getCashButton" destination="5F9-MG-n4z" id="eV3-ZB-w0U"/>
                         <outlet property="mapView" destination="FTf-oK-orq" id="GzL-Nc-pWQ"/>
                         <outlet property="resetMapButton" destination="mPt-nD-GbN" id="29x-tk-fnv"/>
+                        <segue destination="cys-2F-AZq" kind="presentation" identifier="Delivery" id="vJh-K3-Df9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="334"/>
+            <point key="canvasLocation" x="1939" y="334"/>
         </scene>
         <!--Item-->
         <scene sceneID="ft5-Kx-RC7">
@@ -112,7 +113,7 @@
         <!--Cash Out-->
         <scene sceneID="aYc-v7-MSL">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="cys-2F-AZq" customClass="DeliveryMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeliveryMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cys-2F-AZq" customClass="DeliveryMapViewController" customModule="Cash_In" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sfS-j4-d4V"/>
                         <viewControllerLayoutGuide type="bottom" id="egi-Ff-LVy"/>
@@ -138,28 +139,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Bl-XdF">
                                 <rect key="frame" x="20" y="515" width="560" height="75"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Juicy-M.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-ra-emW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4nGkoff - Imgur.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-ra-emW">
                                         <rect key="frame" x="8" y="5" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="2Jj-ST-krV"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliver To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-4G-u9S">
-                                        <rect key="frame" x="86" y="8" width="58" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Cash Out Deliverer Is: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-4G-u9S">
+                                        <rect key="frame" x="86" y="8" width="148" height="17"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-cw-YQl">
                                         <rect key="frame" x="86" y="24" width="65" height="28"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[number]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHk-CS-JJV">
                                         <rect key="frame" x="86" y="50" width="48" height="17"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -178,13 +179,33 @@
                                     <constraint firstItem="SSQ-cw-YQl" firstAttribute="top" secondItem="sVG-4G-u9S" secondAttribute="bottom" constant="-1" id="wy1-em-JdO"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOE-xV-jby">
+                                <rect key="frame" x="20" y="40" width="560" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Time To Arrival: x mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2j-pl-9Fl">
+                                        <rect key="frame" x="169" y="16" width="222" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="BB0-aJ-LUK"/>
+                                    <constraint firstItem="D2j-pl-9Fl" firstAttribute="centerX" secondItem="NOE-xV-jby" secondAttribute="centerX" id="DEb-bh-DgO"/>
+                                    <constraint firstItem="D2j-pl-9Fl" firstAttribute="centerY" secondItem="NOE-xV-jby" secondAttribute="centerY" id="wpW-y4-RKH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XMH-1e-iGh" firstAttribute="trailing" secondItem="9UK-X2-IcK" secondAttribute="trailingMargin" id="1iQ-0b-WGZ"/>
                             <constraint firstItem="XMH-1e-iGh" firstAttribute="top" secondItem="sfS-j4-d4V" secondAttribute="bottom" constant="369" id="6zO-nr-1RJ"/>
                             <constraint firstItem="tup-Ll-f9H" firstAttribute="bottom" secondItem="egi-Ff-LVy" secondAttribute="top" id="74n-Cq-tjh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NOE-xV-jby" secondAttribute="leading" id="FBA-2F-9Cy"/>
                             <constraint firstItem="egi-Ff-LVy" firstAttribute="top" secondItem="JIC-Bl-XdF" secondAttribute="bottom" constant="10" id="LfR-QL-nxq"/>
+                            <constraint firstItem="NOE-xV-jby" firstAttribute="top" secondItem="sfS-j4-d4V" secondAttribute="bottom" constant="20" id="N0F-xg-JJj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NOE-xV-jby" secondAttribute="trailing" id="SIB-z8-EZS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JIC-Bl-XdF" secondAttribute="trailing" id="f3h-GP-jAL"/>
                             <constraint firstItem="tup-Ll-f9H" firstAttribute="leading" secondItem="9UK-X2-IcK" secondAttribute="leadingMargin" constant="-23" id="flR-K1-sfu"/>
                             <constraint firstItem="JIC-Bl-XdF" firstAttribute="leading" secondItem="9UK-X2-IcK" secondAttribute="leadingMargin" id="kjn-0e-2Zv"/>
@@ -194,6 +215,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cash Out" id="crb-xH-aSa"/>
                     <connections>
+                        <outlet property="ETA" destination="D2j-pl-9Fl" id="qlk-8o-pMU"/>
+                        <outlet property="ETAContainer" destination="NOE-xV-jby" id="f7c-7y-Xuj"/>
                         <outlet property="customerImage" destination="ksn-ra-emW" id="WdU-5r-JU8"/>
                         <outlet property="customerName" destination="SSQ-cw-YQl" id="3Xt-DC-m8y"/>
                         <outlet property="customerNumber" destination="sHk-CS-JJV" id="DD2-Gn-oCb"/>
@@ -208,7 +231,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Juicy-M.jpg" width="512" height="512"/>
+        <image name="4nGkoff - Imgur.jpg" width="1500" height="2000"/>
         <image name="Location.png" width="512" height="512"/>
     </resources>
 </document>
