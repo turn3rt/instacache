@@ -97,6 +97,7 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.customerImage.layer.cornerRadius = 65/2
         self.customerImage.clipsToBounds = true
         
+        
         customerName.text = customer.customer_fullname
         customerNumber.text = customer.customer_cell
         

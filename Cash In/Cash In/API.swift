@@ -19,10 +19,10 @@ class Customer {
     var ETA: Double?
     
     init() {
-        customer_firstname = "David"
-        customer_lastname = "Fontenot"
-        customer_fullname = "\(customer_firstname) \(customer_lastname)"
-        customer_cell = "9542604240"
+        customer_firstname = "Nafis"
+        customer_lastname = "Ahmed"
+        customer_fullname = "\(customer_firstname!) \(customer_lastname!)"
+        customer_cell = "(954)-892-9070"
         customer_latitude = Double(25.807505)
         customer_longitude = Double(-80.143874)
         ETA = Double(1)

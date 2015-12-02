@@ -159,7 +159,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Bl-XdF">
                                 <rect key="frame" x="20" y="515" width="560" height="75"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4nGkoff - Imgur.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-ra-emW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12309412_10208811914441558_534446717_n.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-ra-emW">
                                         <rect key="frame" x="8" y="5" width="65" height="65"/>
                                         <animations/>
                                         <constraints>
@@ -258,7 +258,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4nGkoff - Imgur.jpg" width="1500" height="2000"/>
+        <image name="12309412_10208811914441558_534446717_n.jpg" width="200" height="201"/>
         <image name="Location.png" width="512" height="512"/>
     </resources>
 </document>
