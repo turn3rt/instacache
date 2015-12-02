@@ -19,6 +19,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var currentLocation = CLLocationCoordinate2D()
     var currentRegion = MKCoordinateRegion()
 
+    var vendor: Vendor?
     
     
     override func viewDidLoad() {
@@ -35,8 +36,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.getCashButton.layer.shadowOffset = CGSizeMake(2,2)
         self.getCashButton.layer.shadowOpacity = 0.5
         self.getCashButton.layer.shadowRadius = 2
+        
+        vendor = Vendor()
+        vendor!.checkAFNetworking()
 
     }
+    
+
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
