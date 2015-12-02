@@ -12,7 +12,6 @@ import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    @IBOutlet weak var getCashButton: UIButton!
     @IBOutlet weak var resetMapButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     //TODO: Put live data
     let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
-
+    let testLocation = CLLocationCoordinate2D(latitude: 37.783333, longitude: -122.416667)
     
     
     override func viewDidLoad() {
@@ -44,8 +43,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         //request map directions from current loc
         let request = MKDirectionsRequest()
-        let finalDestination = MKMapItem(placemark: MKPlacemark(coordinate: vendorLocation, addressDictionary: nil))
-        request.source = MKMapItem.mapItemForCurrentLocation()
+        let finalDestination = MKMapItem(placemark: MKPlacemark(coordinate: testLocation, addressDictionary: nil))
+        request.source = MKMapItem.mapItemForCurrentLocation() //for demo need to swap this val to be the vendor location
         request.destination = finalDestination
         request.requestsAlternateRoutes = false
         request.transportType = .Automobile
@@ -129,56 +128,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.locationManager.stopUpdatingLocation()
     }
     
-    @IBAction func showCashSelectSheet(sender: UIButton) {
-        let cashMenu = UIAlertController(title: nil, message: "Select The Desired Cash Amount", preferredStyle: .ActionSheet)
-        let alertPopUp = UIAlertController(title: "Something Happened", message: "Click Below", preferredStyle: .Alert)
-        let action = UIAlertAction(title: "Yes", style: .Default, handler: nil)
         
-        
-        let twentyDollars = UIAlertAction(title: "$20", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("20 Selected")
-        })
-        let fourtyDollars = UIAlertAction(title: "$40", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("40 Selected")
-        })
-        let sixtyDollars = UIAlertAction(title: "$60", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("60 Selected")
-        })
-        let eightyDollars = UIAlertAction(title: "$80", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("80 Selected")
-        })
-        let lotsOfDollars = UIAlertAction(title: "$100", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            self.presentViewController(alertPopUp, animated: true, completion: nil)
-            print("100 Selected")
-        })
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .Destructive, handler: {
-            (alert: UIAlertAction!) -> Void in
-            print("Cancelled")
-        })
-        
-        cashMenu.addAction(twentyDollars)
-        cashMenu.addAction(fourtyDollars)
-        cashMenu.addAction(sixtyDollars)
-        cashMenu.addAction(eightyDollars)
-        cashMenu.addAction(lotsOfDollars)
-        cashMenu.addAction(cancel)
-        
-        alertPopUp.addAction(action)
-        
-        
-        self.presentViewController(cashMenu, animated: true, completion: nil)
-    }
-    
     @IBAction func resetLocation(manager: CLLocationManager, didUpdateLocations locations: CLLocation) {
         self.mapView.setRegion(currentRegion, animated: true)
         print("didrun")

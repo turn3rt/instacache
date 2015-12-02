@@ -23,7 +23,7 @@
                                 <animations/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-nD-GbN">
-                                <rect key="frame" x="530" y="535" width="50" height="45"/>
+                                <rect key="frame" x="530" y="500" width="50" height="45"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="6M3-DI-Hu5"/>
@@ -38,12 +38,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FTf-oK-orq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="5dd-CF-hnk"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="IgR-ix-1sL"/>
                             <constraint firstItem="mPt-nD-GbN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jgg-gW-yf6"/>
-                            <constraint firstItem="mPt-nD-GbN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="471" id="LYi-WN-Elt"/>
-                            <constraint firstItem="FTf-oK-orq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TkN-dq-phl"/>
-                            <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X56-p0-1Vg"/>
-                            <constraint firstItem="FTf-oK-orq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-23" id="ZU6-vL-rmU"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Joa-Uq-vTF"/>
+                            <constraint firstItem="mPt-nD-GbN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="436" id="LYi-WN-Elt"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sqp-UZ-ttF"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-23" id="nXf-sv-VFc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cash Out" id="fyO-fl-X6r"/>
@@ -80,6 +80,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="showCashSelectSheet:" destination="7cN-I0-JH4" eventType="touchDown" id="lUf-T1-XJf"/>
                                     <action selector="showCashSelectSheet:" destination="BYZ-38-t0r" eventType="touchDown" id="tDa-Du-ruy"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="jbn-lY-rnP"/>
                                 </connections>

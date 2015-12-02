@@ -122,12 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				9FF5D4D41C0E8F6F0034D0AB /* Vendor.swift */,
+				9FBD394F1C0ED03B00854B15 /* ProfileViewController.swift */,
 				6403ECC11C0E36CD009FE35D /* AppDelegate.swift */,
 				6403ECC31C0E36CD009FE35D /* MapViewController.swift */,
 				6403ED011C0F0FA4009FE35D /* Helper.swift */,
 				6403ECF71C0E9738009FE35D /* VendorPin.swift */,
 				6403ECC51C0E36CD009FE35D /* Main.storyboard */,
-				9FBD394F1C0ED03B00854B15 /* ProfileViewController.swift */,
 				6403ECC81C0E36CD009FE35D /* Assets.xcassets */,
 				6403ECF31C0E5B13009FE35D /* Location.png */,
 				6403ED031C0F0FBD009FE35D /* Money@2x.png */,
