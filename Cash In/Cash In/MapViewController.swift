@@ -18,9 +18,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
 
     let locationManager = CLLocationManager()
+    let helper = Helper()
     var currentRegion = MKCoordinateRegion()
 
     var vendor: Vendor?
+   
     
     
     override func viewDidLoad() {
@@ -61,7 +63,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if !(annotation is MKPointAnnotation || annotation is VendorPin) {
             return nil
         }
-        print("WORK")
         
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
         if annotationView == nil {
@@ -73,9 +74,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
         //TODO: resize this image
-        annotationView!.image = UIImage(named: "money.png")
+        annotationView!.image = Helper.ResizeImage(UIImage(named: "Money@2x.png")!, targetSize: CGSizeMake(25, 25))
         return annotationView
-        
     }
     
     
@@ -89,7 +89,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         //static vendor location
         let vendorLocation = CLLocationCoordinate2D(latitude: 25.8246631622314, longitude: -80.1212844848633)
-        let vendorPin = VendorPin(coordinate: vendorLocation, title: "Cash is here", subtitle: "It's on the way!")
+        let vendorPin = VendorPin(coordinate: vendorLocation, title: "[Runner's Name]", subtitle: "I'm on the way!")
         mapView.addAnnotation(vendorPin)
         
         

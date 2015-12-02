@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ExI-ng-E5j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ExI-ng-E5j">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-oK-orq">
-                                <rect key="frame" x="-3" y="0.0" width="605" height="600"/>
+                                <rect key="frame" x="-1" y="0.0" width="602" height="600"/>
                                 <animations/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F9-MG-n4z">
-                                <rect key="frame" x="8" y="495" width="584" height="97"/>
+                                <rect key="frame" x="8" y="508" width="584" height="84"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.70196078431372544" green="0.76078431372549016" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
@@ -34,11 +35,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-nD-GbN">
-                                <rect key="frame" x="530" y="442" width="50" height="45"/>
+                                <rect key="frame" x="530" y="455" width="50" height="45"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="6M3-DI-Hu5"/>
-                                    <constraint firstAttribute="width" constant="50" id="EhS-RN-opu"/>
+                                    <constraint firstAttribute="height" constant="45" id="lrB-sn-eEe"/>
+                                    <constraint firstAttribute="width" constant="50" id="nPI-8D-OQH"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Location.png"/>
                                 <connections>
@@ -51,15 +52,27 @@
                         <constraints>
                             <constraint firstItem="FTf-oK-orq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5Y1-6k-hkl"/>
                             <constraint firstAttribute="trailing" secondItem="5F9-MG-n4z" secondAttribute="trailing" constant="8" id="AwD-BC-XXk"/>
-                            <constraint firstItem="5F9-MG-n4z" firstAttribute="top" secondItem="FTf-oK-orq" secondAttribute="bottom" constant="-105" id="CZT-lP-mQF"/>
-                            <constraint firstItem="mPt-nD-GbN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jgg-gW-yf6"/>
-                            <constraint firstItem="mPt-nD-GbN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="378" id="LYi-WN-Elt"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="centerX" secondItem="5F9-MG-n4z" secondAttribute="centerX" id="Eu7-7h-Dt6"/>
+                            <constraint firstItem="5F9-MG-n4z" firstAttribute="top" secondItem="mPt-nD-GbN" secondAttribute="bottom" constant="8" id="J9s-ix-4Wi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FTf-oK-orq" secondAttribute="bottom" id="Qr3-8K-Hrj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FTf-oK-orq" secondAttribute="trailing" constant="-21" id="RRI-ri-f26"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="V4L-3h-Q1Z"/>
-                            <constraint firstItem="5F9-MG-n4z" firstAttribute="top" secondItem="mPt-nD-GbN" secondAttribute="bottom" constant="8" symbolic="YES" id="lDj-Wv-rhb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mPt-nD-GbN" secondAttribute="trailing" id="YwO-lJ-i9B"/>
+                            <constraint firstItem="mPt-nD-GbN" firstAttribute="leading" secondItem="FTf-oK-orq" secondAttribute="trailing" constant="-240" id="ZrZ-hG-7oF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mPt-nD-GbN" secondAttribute="bottom" constant="100" id="lwe-GY-Eah"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="leading" secondItem="FTf-oK-orq" secondAttribute="leading" constant="11" id="p3e-Sn-GU4"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="trailing" secondItem="FTf-oK-orq" secondAttribute="trailing" constant="-10" id="vXw-Ja-GmW"/>
                             <constraint firstItem="5F9-MG-n4z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-8" id="wUh-ss-QIP"/>
+                            <constraint firstItem="FTf-oK-orq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-21" id="ymV-Cr-uL9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Eu7-7h-Dt6"/>
+                                <exclude reference="p3e-Sn-GU4"/>
+                                <exclude reference="vXw-Ja-GmW"/>
+                                <exclude reference="ZrZ-hG-7oF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Cash Out" id="fyO-fl-X6r"/>
                     <connections>

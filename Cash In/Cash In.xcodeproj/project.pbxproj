@@ -16,9 +16,10 @@
 		6403ECE21C0E36CD009FE35D /* Cash_InUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECE11C0E36CD009FE35D /* Cash_InUITests.swift */; };
 		6403ECF21C0E42CC009FE35D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403ECF11C0E42CC009FE35D /* MapKit.framework */; };
 		6403ECF41C0E5B13009FE35D /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECF31C0E5B13009FE35D /* Location.png */; };
-		9FF5D4D51C0E8F6F0034D0AB /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5D4D41C0E8F6F0034D0AB /* Vendor.swift */; };
-		6403ECF61C0E949F009FE35D /* money.png in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECF51C0E949F009FE35D /* money.png */; };
 		6403ECF81C0E9739009FE35D /* VendorPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECF71C0E9738009FE35D /* VendorPin.swift */; };
+		6403ECFC1C0EFC75009FE35D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403ECFB1C0EFC75009FE35D /* Helper.swift */; };
+		6403ED001C0F06AE009FE35D /* Money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6403ECFF1C0F06AE009FE35D /* Money@2x.png */; };
+		9FF5D4D51C0E8F6F0034D0AB /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5D4D41C0E8F6F0034D0AB /* Vendor.swift */; };
 		EBED542D2DDDB50D629A7C72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 448C492B5095C6097B799E39 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +57,9 @@
 		6403ECE31C0E36CD009FE35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6403ECF11C0E42CC009FE35D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6403ECF31C0E5B13009FE35D /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
-		6403ECF51C0E949F009FE35D /* money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money.png; sourceTree = "<group>"; };
 		6403ECF71C0E9738009FE35D /* VendorPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPin.swift; sourceTree = "<group>"; };
+		6403ECFB1C0EFC75009FE35D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		6403ECFF1C0F06AE009FE35D /* Money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money@2x.png"; sourceTree = "<group>"; };
 		80410F34E90B0501F8EC170B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9F25E8781C0E8A46003BB231 /* Cash In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cash In-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FF5D4D41C0E8F6F0034D0AB /* Vendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
@@ -121,10 +123,11 @@
 				6403ECC11C0E36CD009FE35D /* AppDelegate.swift */,
 				6403ECC31C0E36CD009FE35D /* MapViewController.swift */,
 				6403ECF71C0E9738009FE35D /* VendorPin.swift */,
+				6403ECFB1C0EFC75009FE35D /* Helper.swift */,
 				6403ECC51C0E36CD009FE35D /* Main.storyboard */,
 				6403ECC81C0E36CD009FE35D /* Assets.xcassets */,
 				6403ECF31C0E5B13009FE35D /* Location.png */,
-				6403ECF51C0E949F009FE35D /* money.png */,
+				6403ECFF1C0F06AE009FE35D /* Money@2x.png */,
 				6403ECCA1C0E36CD009FE35D /* LaunchScreen.storyboard */,
 				6403ECCD1C0E36CD009FE35D /* Info.plist */,
 				9F25E8781C0E8A46003BB231 /* Cash In-Bridging-Header.h */,
@@ -280,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6403ECF41C0E5B13009FE35D /* Location.png in Resources */,
-				6403ECF61C0E949F009FE35D /* money.png in Resources */,
+				6403ED001C0F06AE009FE35D /* Money@2x.png in Resources */,
 				6403ECCC1C0E36CD009FE35D /* LaunchScreen.storyboard in Resources */,
 				6403ECC91C0E36CD009FE35D /* Assets.xcassets in Resources */,
 				6403ECC71C0E36CD009FE35D /* Main.storyboard in Resources */,
@@ -358,6 +361,7 @@
 			files = (
 				9FF5D4D51C0E8F6F0034D0AB /* Vendor.swift in Sources */,
 				6403ECF81C0E9739009FE35D /* VendorPin.swift in Sources */,
+				6403ECFC1C0EFC75009FE35D /* Helper.swift in Sources */,
 				6403ECC41C0E36CD009FE35D /* MapViewController.swift in Sources */,
 				6403ECC21C0E36CD009FE35D /* AppDelegate.swift in Sources */,
 			);
