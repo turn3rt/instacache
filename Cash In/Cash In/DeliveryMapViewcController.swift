@@ -161,6 +161,15 @@ class DeliveryMapViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.locationManager.stopUpdatingLocation()
     }
     
+    @IBAction func showThanksSelectSheet(sender: UIButton) {
+        let ThanksAlertPopUp = UIAlertController(title: "Thanks for using MasterCard", message: "We hope to see you soon!", preferredStyle: .Alert)
+        //let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        //ThanksAlertPopUp.addAction(action)
+        
+        self.presentViewController(ThanksAlertPopUp, animated: true, completion: nil)
+        
+    }
     
     @IBAction func resetLocation(manager: CLLocationManager, didUpdateLocations locations: CLLocation) {
         self.mapView.setRegion(currentRegion, animated: true)
